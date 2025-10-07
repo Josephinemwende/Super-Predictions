@@ -34,7 +34,7 @@ function SideBarNavigation() {
                     </div>
                 ))}
                 {[
-                    'TOP predictions',
+                    'Expert Picks',
                     'Values',
                     'Favorites',
                     'Lists',

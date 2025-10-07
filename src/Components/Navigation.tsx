@@ -12,9 +12,9 @@ import MoreIcon from '../assets/More-Icon.png';
 const mainLinks = [
   { label: 'Home', href: '/', showLabel: true },
   { label: 'News', href: '#' },
-  { label: 'Teams', href: '#' },
-  { label: 'Scores', href: '#' },
-  { label: 'Fixtures', href: '#' },
+  { label: 'Betting Stats', href: '#' },
+  { label: 'Bet Outcomes', href: '#' },
+  { label: 'Value Picks', href: '#' },
   { label: 'Predictions', href: '#' },
   { label: 'Standings', href: '#' },
 ];
