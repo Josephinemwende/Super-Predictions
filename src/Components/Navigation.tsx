@@ -1,30 +1,17 @@
 import '../App.css';
 import SoccerKickingIcon from '../assets/soccer-kicking-icon.png';
-import HomeIcon from '../assets/home-icon.png';
-import FootballIcon from '../assets/football-icon.png';
-import BasketballIcon from '../assets/Basketball-icon.png';
-import BaseballIcon from '../assets/Baseball-icon.png';
-import RugbyIcon from '../assets/Rugby-Icon.png';
+{/*import HomeIcon from '../assets/home-icon.png';*/}
 import SearchIcon from '../assets/Search-Icon.png';
 import SettingsIcon from '../assets/Settings-Icon.png';
-import MoreIcon from '../assets/More-Icon.png';
+{/*import MoreIcon from '../assets/More-Icon.png';*/}
 
 const mainLinks = [
   { label: 'Home', href: '/', showLabel: true },
-  { label: 'News', href: '#' },
-  { label: 'Betting Stats', href: '#' },
-  { label: 'Bet Outcomes', href: '#' },
-  { label: 'Value Picks', href: '#' },
   { label: 'Predictions', href: '#' },
+  { label: 'Value Picks', href: '#' },
   { label: 'Standings', href: '#' },
-];
-
-const sportIcons = [
-  { icon: FootballIcon, label: 'Football' },
-  { icon: BasketballIcon, label: 'Basketball' },
-  { icon: BaseballIcon, label: 'Baseball' },
-  { icon: RugbyIcon, label: 'Rugby' },
-  { icon: MoreIcon, label: 'More' },
+  { label: 'Stats', href: '#' },
+  { label: 'News', href: '#' },
 ];
 
 const utilityIcons = [
@@ -51,15 +38,7 @@ function Navigation() {
           </li>
         ))}
 
-        {/* Sports Icons */}
         <div className="flex items-center gap-5 ml-auto">
-          {sportIcons.map((item, idx) => (
-            <li key={idx} className="flex items-center gap-1 hover:text-white cursor-pointer transition">
-              <img src={item.icon} alt={item.label} className="w-5 h-5" />
-              <span className="text-xs">{item.label}</span>
-            </li>
-          ))}
-
           {/* Utility Icons */}
           {utilityIcons.map((item, idx) => (
             <li key={idx} className="flex items-center gap-1 hover:text-white cursor-pointer transition">
