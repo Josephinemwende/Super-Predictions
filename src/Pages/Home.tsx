@@ -1,4 +1,4 @@
-import { Crown, Star, Users, ShieldCheck, CircleCheckBig, Clock, TrendingUp, Eye, Target, CircleDot, Flame, UserPlus,ChartSpline, Check, Zap, Calendar } from "lucide-react";
+import { Crown, Star, Users, CircleCheckBig, Clock, TrendingUp, Eye, Target, CircleDot, Flame, UserPlus,ChartSpline, Check, Zap } from "lucide-react";
 import '../App.css';
 import Navigation from '../Components/Navigation';
 import SideBarNavigation from '../Components/SideBarNavigation';
@@ -196,9 +196,9 @@ function HomePage() {
     manUtd: ["W", "W", "L", "D", "W"],
     liverpool: ["W", "D", "W", "W", "L"],
   };
-  const renderForm = (form) => (
+  const renderForm = (form: any[]) => (
     <div className="flex space-x-1">
-      {form.map((result, idx) => (
+      {form.map((result: any, idx: number) => (
         <span
           key={idx}
           className={`px-2 py-1 rounded text-xs font-bold ${
