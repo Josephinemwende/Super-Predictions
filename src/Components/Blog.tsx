@@ -1,8 +1,8 @@
 import React from 'react';
 import BlogCard from './BlogCard';
-import bettingStrategies from '../assets/betting-strategies.jpg';
-import taxImage from '../assets/tax.jpg';
-import peopleBetting from '../assets/betting.jpg';
+import bettingStrategies from '../assets/betting-strategies.webp';
+import taxImage from '../assets/tax.webp';
+import peopleBetting from '../assets/betting.webp';
 
 interface Blog {
   image: string;

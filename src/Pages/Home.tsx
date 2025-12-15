@@ -1,6 +1,6 @@
-import { Crown, Star, Users, CircleCheckBig, Clock, TrendingUp, Eye, Target, CircleDot, Flame, UserPlus,ChartSpline, Check, Zap } from "lucide-react";
+import { Crown, Star, Users, CircleCheckBig, Clock, TrendingUp, Eye, Target, ChevronRight, CircleDot, Flame, UserPlus,ChartSpline, Check, Zap, MoveRight} from "lucide-react";
 import '../App.css';
-import Navigation from '../Components/Navigation';
+import Header from '../Components/Header';
 import SideBarNavigation from '../Components/SideBarNavigation';
 import Footer from '../Components/Footer';
 import Blog from '../Components/Blog';
@@ -282,10 +282,10 @@ function HomePage() {
 
   return (
     <>
-      <Navigation />
-      <div className="flex min-h-screen bg-gray-100">
+      <Header />
+      <div className="flex min-h-screen">
         <SideBarNavigation />
-        <main className="flex-1 ml-5 mt-2 me-8">
+        <main className="absolute top-20 left-75 flex-1 ml-5 mt-2 me-8">
           <section className="relative flex flex-col md:flex-row mb-8 rounded-lg shadow-lg overflow-hidden min-h-[600px]">
             
             {/* Background Video */}
@@ -304,20 +304,25 @@ function HomePage() {
             <div className="absolute top-0 left-0 w-full h-full bg-[#010D26] opacity-70 z-10"></div>
 
             {/* Left Hero Content (Bottom-Left) */}
-            <div className="relative z-10 flex-1 flex flex-col justify-end p-6 md:p-10">
-              <h1 className="text-3xl md:text-5xl font-bold text-white mb-6 leading-snug">
-                Picks. Odds. <span className="text-[#D99E30]">Profits.</span>
-              </h1>
-              <p className="text-sm md:text-base text-gray-400 mb-8 leading-relaxed max-w-lg">
-                Expert insights, real stats, and bold predictions to help you bet smarter and win bigger.
-              </p>
-              <p>Join 5000+ bettors who trust our AI powered predictions</p>
-              <div className="flex items-center space-x-4">
-                <a href="#" className="p-3 text-gray-400 border border-solid border-[#D99E30] hover:bg-[#D99E30] rounded-xl hover:text-white transition">View Today Top Tip</a>
-                <a href="#" className="flex items-center space-x-2 p-3  bg-[#D99E30] text-white rounded-xl hover:opacity-90 transition"><Crown className="text-white w-4 h-4" /><span>Premium</span></a>
+            <div className="relative z-10 flex-1 flex flex-col p-6 md:p-10 justify-center md:justify-between"> 
+              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#D99E30]/40">
+                <span className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
+                <span className="text-sm font-medium text-[#D99E30]">Live predictions available</span>
+              </div>
+              <div>
+                <h1 className="text-3xl md:text-5xl font-bold text-white mb-6 leading-snug">
+                  Picks. Odds. <span className="text-[#D99E30]">Profits.</span>
+                </h1>
+                <p className="text-sm md:text-base text-gray-400 mb-8 leading-relaxed max-w-lg">
+                  Expert insights, real stats, and bold predictions to help you bet smarter and win bigger. Join our elite betting community today.
+                </p>
+                <div className="flex items-center space-x-4">
+                  <a href="#" className="inline-flex items-center gap-3 px-6 py-3 bg-[#D99E30] text-[#010D26] font-semibold rounded-2xl shadow-md hover:shadow-lg hover:-translate-y-0.5 transition-all duration-200">Start Winning Today<MoveRight className="w-5 h-5 text-[#010D26]"/></a>
+                  <a href="#" className="inline-flex items-center px-6 py-3 rounded-2xl border border-[#D99E30] text-[#D99E30] font-semibold backdrop-blur-md bg-white/0 hover:bg-[#D99E30]/15 transition-all duration-200">View Today's Tips</a>
+                </div>
               </div>
             </div>
-
+          
             {/* Right Sidebar Content */}
             <div className="relative z-10 flex-1 grid grid-cols-2 gap-4 p-6 text-white">
 
@@ -448,7 +453,7 @@ function HomePage() {
               </div>
             </div>
           </section>
-          <section id="tips" className="py-5 bg-gray-50 dark:bg-gray-900">
+          <section id="tips" className="py-5">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
               {/* Header */}
               <div className="text-center mb-8">
@@ -620,11 +625,11 @@ function HomePage() {
           <section className="grid grid-cols-12 gap-6 p-6 bg-white text-white mt-5">
             {/* Left Section - In Depth Match Analysis */}
             <div className="col-span-12 lg:col-span-8">
-              <div className="px-4 py-2 bg-[#D99E30] text-white font-semibold text-sm tracking-wide w-fit rounded-full shadow-md mb-4">
+              <div className="px-4 py-2 bg-[#D99E30] text-[#010D26] font-semibold text-sm tracking-wide w-fit rounded-full shadow-md mb-4">
                 Featured Analytic
               </div>
               <div className=" rounded-2xl shadow-lg p-6">
-                <h2 className="text-2xl font-bold mb-4 text-[#D99E30] font-bold">In-Depth Match Analysis</h2>
+                <h2 className="text-2xl font-bold mb-4 text-[#D99E30] font-bold"><span className="text-[#010D26]">In-Depth</span> Match Analysis</h2>
                 <p className="text-gray-600 mb-6">
                   Professional insights backed by comprehensive data analysis and expert commentary
                 </p>
@@ -662,17 +667,29 @@ function HomePage() {
                   </div>
 
                   {/* Expert Commentary */}
-                  <div>
-                    <h4 className="text-lg font-semibold mb-2">Expert Commentary</h4>
-                    <p className="text-white text-sm">
-                      This Manchester Derby presents excellent value for the "Both Teams to Score" market.
-                      United's attacking form at home has been exceptional, while Liverpool's recent defensive
-                      struggles suggest vulnerabilities.
+                  <div className="p-4 rounded-xl border-l-4 border-[#D99E30]">
+                    <h4 className="font-semibold mb-2 flex items-center gap-2">
+                      <span className="text-[#D99E30]">Expert Commentary</span>
+                    </h4>
+                    <p className="text-sm text-muted leading-relaxed">
+                      "This fixture is always a high-stakes classic in the Premier League. Based on our AI-driven model, 
+                      we expect an open, attacking game with both teams pushing for goals. Man United's form at home 
+                      combined with Liverpool's attacking prowess makes Over 2.5 Goals a strong pick."
                     </p>
-                    <p className="text-[#D99E30] font-bold text-sm mt-2">
-                      Key factors: United's 87% BTTS rate at Old Trafford this season, Liverpool's improved attacking output under new management, 
-                      and the historical high-scoring nature of this fixture.
-                    </p>
+                  </div>
+
+                  {/* Markets */}
+                  <div className="flex flex-wrap gap-2 mt-4">
+                    {["Over 2.5 ✓", "BTTS ✓", "Home Win", "Both Halves"].map((market) => (
+                      <span
+                        key={market}
+                        className={`px-3 py-1.5 rounded-lg text-sm font-medium ${
+                          market.includes("✓") ? "bg-[#D99E30]/40 text-white" : "bg-gray-600 text-white"
+                        }`}
+                      >
+                        {market}
+                      </span>
+                    ))}
                   </div>
                   {/* Predicted Scoreline */}
                   <div className="bg-gradient-to-r from-green-600 to-blue-600 text-center rounded-lg py-3 my-6">
@@ -691,30 +708,31 @@ function HomePage() {
                     </div>
                   </div>
                 </div>
-                <div className="flex items-center gap-4">
-                  {/* Primary Button - Place Bet */}
-                  <button className="flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-green-500 to-green-600 text-white font-semibold rounded-xl shadow-md hover:from-green-600 hover:to-green-700 transition-all">
-                    <CircleDot className="w-5 h-5" />
-                    Place this bet
+                <div className="flex gap-3">
+                  <button
+                    className="flex flex-1 items-center justify-center gap-2 rounded-xl
+                              bg-[#D99E30] px-4 py-2 text-sm font-semibold text-[#010D26]
+                              shadow-sm transition
+                              hover:bg-[#c98f28] hover:shadow-md
+                              focus:outline-none focus:ring-2 focus:ring-[#D99E30]/50"
+                  >
+                    View More Analysis
+                    <ChevronRight size={16} />
                   </button>
 
-                  {/* Secondary Button - Join Discussion */}
-                  <button className="flex items-center gap-2 px-6 py-3 bg-gray-700 text-gray-200 font-medium rounded-xl hover:bg-gray-600 transition-all">
-                    <Users className="w-5 h-5" />
-                    Join Discussion
-                  </button>
-
-                  {/* Premium Button - Get Premium Analysis */}
-                  <button className="flex items-center gap-2 px-6 py-3 bg-[#D99E30] text-black font-bold rounded-full shadow-lg hover:bg-[#c48b28] hover:shadow-xl transition-all">
-                    <Crown className="w-5 h-5" />
-                    Get Premium Analysis
+                  <button
+                    className="flex items-center gap-2 rounded-xl
+                              border border-[#D99E30] px-4 py-2 text-sm font-semibold text-[#010D26]
+                              transition
+                              hover:bg-[#D99E30]/10 hover:border-[#c98f28]
+                              focus:outline-none focus:ring-2 focus:ring-[#D99E30]/40"
+                  >
+                    <Crown size={16} />
+                    Get Premium Access
                   </button>
                 </div>
+
               </div>
-              <button className="flex items-center gap-2 px-6 py-3 bg-[#010D26] text-gray-300 font-bold rounded-full shadow-lg hover:bg-[#c48b28] hover:shadow-xl transition-all mx-auto mt-3">
-                <ChartSpline className="w-5 h-5" />
-                View More Analytics
-              </button>
             </div>
 
             {/* Right Section - Tipsters Leaderboard */}
@@ -747,6 +765,9 @@ function HomePage() {
                     </div>
                   </div>
                 ))}
+                <button className="w-full mt-4 bg-[#010D26] text-white font-medium py-3 px-8 rounded-lg shadow ">
+                  View Full Leaderboard
+                </button>
               </div>
             </div>
           </section>

@@ -2,7 +2,9 @@ import './App.css';
 import Home from '../src/Pages/Home';
 function App() {
   return(
-    <Home />
+    <div className="relative">
+      <Home />
+    </div>
   )
 }
 
